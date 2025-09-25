@@ -122,13 +122,13 @@
     <section id="content">
       <nav>
         <div class="breadcumb">
-          <h1 class="title">Dashboard: Cattle Farm</h1>
+          <h1 class="title">Dashboard: Royal Agro</h1>
         </div>
         <div class="profile-box">
-          <h3 class="profile-user"><span>User:</span> Agro Farm</h3>
+          <h3 class="profile-user"><span>User:</span> Royal Agro Industries</h3>
           <span class="divider"></span>
           <div class="profile">
-            <!-- <img src="images/hamslogo.jpg" alt="" /> -->
+            <img src="images/royal_agro.jpg" alt="" />
           </div>
           <span class="divider"></span>
           <p class="logOut-btn" id="log-out">Log Out</p>
@@ -145,10 +145,10 @@
             </h3>
             <div class="gauge">
               <div class="gauge-bg">
-                <div class="gauge-fill" id="temperature-fill"></div>
+                <div class="gauge-fill" id="temperature1-fill"></div>
               </div>
               <div class="gauge-center">
-                <div class="gauge-value" id="temperature-value">
+                <div class="gauge-value" id="temperature1-value">
                   0<span class="gauge-unit">°C</span>
                 </div>
                 <div class="gauge-minmax">
@@ -157,7 +157,7 @@
                 </div>
               </div>
             </div>
-            <div class="status status-normal" id="temperature-status">
+            <div class="status status-normal" id="temperature1-status">
               Normal
             </div>
           </div>
@@ -167,10 +167,10 @@
             </h3>
             <div class="gauge">
               <div class="gauge-bg">
-                <div class="gauge-fill" id="temperature-fill"></div>
+                <div class="gauge-fill" id="temperature2-fill"></div>
               </div>
               <div class="gauge-center">
-                <div class="gauge-value" id="temperature-value">
+                <div class="gauge-value" id="temperature2-value">
                   0<span class="gauge-unit">°C</span>
                 </div>
                 <div class="gauge-minmax">
@@ -179,7 +179,7 @@
                 </div>
               </div>
             </div>
-            <div class="status status-normal" id="temperature-status">
+            <div class="status status-normal" id="temperature2-status">
               Normal
             </div>
           </div>
@@ -189,10 +189,10 @@
             </h3>
             <div class="gauge">
               <div class="gauge-bg">
-                <div class="gauge-fill" id="temperature-fill"></div>
+                <div class="gauge-fill" id="temperature3-fill"></div>
               </div>
               <div class="gauge-center">
-                <div class="gauge-value" id="temperature-value">
+                <div class="gauge-value" id="temperature3-value">
                   0<span class="gauge-unit">°C</span>
                 </div>
                 <div class="gauge-minmax">
@@ -201,7 +201,7 @@
                 </div>
               </div>
             </div>
-            <div class="status status-normal" id="temperature-status">
+            <div class="status status-normal" id="temperature3-status">
               Normal
             </div>
           </div>
@@ -211,10 +211,10 @@
             </h3>
             <div class="gauge">
               <div class="gauge-bg">
-                <div class="gauge-fill" id="temperature-fill"></div>
+                <div class="gauge-fill" id="temperature4-fill"></div>
               </div>
               <div class="gauge-center">
-                <div class="gauge-value" id="temperature-value">
+                <div class="gauge-value" id="temperature4-value">
                   0<span class="gauge-unit">°C</span>
                 </div>
                 <div class="gauge-minmax">
@@ -223,7 +223,7 @@
                 </div>
               </div>
             </div>
-            <div class="status status-normal" id="temperature-status">
+            <div class="status status-normal" id="temperature4-status">
               Normal
             </div>
           </div>
@@ -232,10 +232,10 @@
             <h3 class="gauge-title"><i class="fas fa-tint"></i> Humidity 1</h3>
             <div class="gauge">
               <div class="gauge-bg">
-                <div class="gauge-fill" id="humidity-fill"></div>
+                <div class="gauge-fill" id="humidity1-fill"></div>
               </div>
               <div class="gauge-center">
-                <div class="gauge-value" id="humidity-value">
+                <div class="gauge-value" id="humidity1-value">
                   0<span class="gauge-unit">%</span>
                 </div>
                 <div class="gauge-minmax">
@@ -244,16 +244,16 @@
                 </div>
               </div>
             </div>
-            <div class="status status-normal" id="humidity-status">Normal</div>
+            <div class="status status-normal" id="humidity1-status">Normal</div>
           </div>
           <div class="gauge-card">
             <h3 class="gauge-title"><i class="fas fa-tint"></i> Humidity 2</h3>
             <div class="gauge">
               <div class="gauge-bg">
-                <div class="gauge-fill" id="humidity-fill"></div>
+                <div class="gauge-fill" id="humidity2-fill"></div>
               </div>
               <div class="gauge-center">
-                <div class="gauge-value" id="humidity-value">
+                <div class="gauge-value" id="humidity2-value">
                   0<span class="gauge-unit">%</span>
                 </div>
                 <div class="gauge-minmax">
@@ -262,7 +262,7 @@
                 </div>
               </div>
             </div>
-            <div class="status status-normal" id="humidity-status">Normal</div>
+            <div class="status status-normal" id="humidity2-status">Normal</div>
           </div>
         </div>
         <!-- Gauge card end -->
@@ -272,13 +272,13 @@
           <div class="chart-card">
             <div class="chart-title">Amonia Sensors</div>
             <div class="chart-container">
-              <canvas id="voltage-chart"></canvas>
+              <canvas id="amonia-chart"></canvas>
             </div>
           </div>
           <div class="chart-card">
             <div class="chart-title">PH Sensors</div>
             <div class="chart-container">
-              <canvas id="voltage-chart"></canvas>
+              <canvas id="ph-chart"></canvas>
             </div>
           </div>
         </div>
@@ -294,11 +294,11 @@
                 <div>
                   <h3>Fan 1</h3>
                   <div class="fan-display">
-                    <p class="on-btn" id="bgp-psu1">On</p>
-                    <p class="show-btn" id="bgp-d-psu1">50 W</p>
+                    <p id="fan1"></p>
+                    <p id="fan1-d"></p>
                   </div>
                 </div>
-                <div class="fan-icon active-fan">
+                <div id="fan1-icon" class="fan-icon">
                   <i class="fas fa-fan"></i>
                 </div>
               </div>
@@ -308,11 +308,11 @@
                 <div>
                   <h3>Fan 2</h3>
                   <div class="fan-display">
-                    <p class="off-btn" id="bgp-psu1">Off</p>
-                    <p id="bgp-d-psu1"></p>
+                    <p id="fan2"></p>
+                    <p id="fan2-d"></p>
                   </div>
                 </div>
-                <div class="fan-icon"><i class="fas fa-fan"></i></div>
+                <div id="fan2-icon" class="fan-icon"><i class="fas fa-fan"></i></div>
               </div>
             </div>
             <div class="fan-card">
@@ -320,11 +320,11 @@
                 <div>
                   <h3>Fan 3</h3>
                   <div class="fan-display">
-                    <p class="on-btn" id="bgp-psu1">On</p>
-                    <p class="show-btn" id="bgp-d-psu1">200 W</p>
+                    <p id="fan3"></p>
+                    <p id="fan3-d"></p>
                   </div>
                 </div>
-                <div class="fan-icon active-fan">
+                <div id="fan3-icon" class="fan-icon">
                   <i class="fas fa-fan"></i>
                 </div>
               </div>
@@ -334,11 +334,11 @@
                 <div>
                   <h3>Fan 4</h3>
                   <div class="fan-display">
-                    <p class="off-btn" id="bgp-psu1">Off</p>
-                    <p id="bgp-d-psu1"></p>
+                    <p id="fan4"></p>
+                    <p id="fan4-d"></p>
                   </div>
                 </div>
-                <div class="fan-icon"><i class="fas fa-fan"></i></div>
+                <div id="fan4-icon" class="fan-icon"><i class="fas fa-fan"></i></div>
               </div>
             </div>
             <div class="fan-card">
@@ -346,11 +346,11 @@
                 <div>
                   <h3>Fan 5</h3>
                   <div class="fan-display">
-                    <p class="on-btn" id="bgp-psu1">On</p>
-                    <p class="show-btn" id="bgp-d-psu1">100 W</p>
+                    <p id="fan5"></p>
+                    <p id="fan5-d"></p>
                   </div>
                 </div>
-                <div class="fan-icon active-fan">
+                <div id="fan5-icon" class="fan-icon">
                   <i class="fas fa-fan"></i>
                 </div>
               </div>
