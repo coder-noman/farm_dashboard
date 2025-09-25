@@ -22,7 +22,7 @@ if (logoutBtn) {
 
 //Handle Logout Button End
 
-//Declare psu array and variable
+//Declare Fan array and variable
 // let fan_arr = [10, 20, 30, 40, 20];
 // let fan_arr = [0, 0, 0, 0, 0];
 let fan_arr = [10, 0, 20, 0, 30];
@@ -40,7 +40,6 @@ updateBarChart1();
 updateBarChart2() 
 fanDataShow();
 // Default Data Show end
-// Hams_HO::::GD,235,235,0,0.0,0.0,0,1,1,1,1,1,192.168.0.87,Gra,45,4.2,1,1,0
 
 //.........websocket_client code Start..............
 // var socket = new WebSocket("ws://27.147.170.162:81");
@@ -88,12 +87,12 @@ socket.onmessage = function (event) {
   );
 
   // power supply unit
-  psuDataInsert(data[1], data[2], data[3]);
+  fanDataInsert(data[1], data[2], data[3]);
 };
 //.........websocket_client code end..............
 
-// Psu data start
-function psuDataInsert(x, y, z) {
+// Fan data start
+function fanDataInsert(x, y, z) {
   // fan Data Insert
   if (x != "") {
     var fan_data = x.split(",");
@@ -108,7 +107,7 @@ function fanDataShow() {
   const fanIcon = ["fan1-icon", "fan2-icon", "fan3-icon", "fan4-icon", "fan5-icon"];
   const fanDisplayId = ["fan1-d", "fan2-d", "fan3-d", "fan4-d", "fan5-d"];
   const fanCardData = ["Fan1", "Fan2", "Fan3", "Fan4", "Fan5"];
-  // ipdu 1 Data show
+  // Fan Data show
   for (i = 0; i <= 4; i++) {
     if (fan_arr[i] >= 1) {
       fanOnShowData(fanId[i], fanDisplayId[i], fan_arr[i],fanIcon[i]);
@@ -118,7 +117,7 @@ function fanDataShow() {
   }
 }
 
-//Psu On Show Data Funtion
+//Fan On Show Data Funtion
 function fanOnShowData(fan_Id, fan_d_id, fan_value,fan_icon) {
   document.getElementById(fan_Id).innerText = "ON";
   document.getElementById(fan_Id).classList.add("on-btn");
@@ -126,7 +125,7 @@ function fanOnShowData(fan_Id, fan_d_id, fan_value,fan_icon) {
   document.getElementById(fan_d_id).innerText = `${fan_value} VA`;
   document.getElementById(fan_d_id).classList.add("show-btn");
 }
-//Psu Off Show Data Funtion
+//Fan Off Show Data Funtion
 function fanOffShowData(fan_Id, fanCardData,fan_icon) {
   document.getElementById(fan_Id).innerText = "OFF";
   document.getElementById(fan_Id).classList.add("off-btn");
@@ -137,7 +136,7 @@ function fanOffShowData(fan_Id, fanCardData,fan_icon) {
   li.textContent = `${fanCardData} is Failed.`;
   ul.appendChild(li);
 }
-// Psu data end
+// Fan data end
 
 //Gauge alert start
 function gaugeAlert(data, status) {
@@ -293,7 +292,7 @@ function updateGauge(elementId, value, ranges) {
 //update all gauge data
 function updateAllData(a, b, c, d, e, f) {
   console.log(a,b,c,d,e,f)
-  // Input Voltage (0-300V)
+  // Temperature 1 (0-55°C)
   const temperature1 = a;
   updateGauge("temperature1", temperature1, {
     green: [0, 25],
@@ -302,13 +301,14 @@ function updateAllData(a, b, c, d, e, f) {
     max: 55,
   });
 
+  // Alert for Temperature 1
  if (temperature1 >= 26 && temperature1 <= 31) {
     gaugeAlert("Temperature-1", "high");
   } else if (temperature1 >= 32 && temperature1 <= 55) {
     gaugeAlert("Temperature-1", "very high");
   }
 
-  // UPS1 Output Voltage (0-300V)
+  // Temperature 2 (0-55°C)
   const temperature2 = b;
   updateGauge("temperature2", temperature2, {
     green: [0, 25],
@@ -317,14 +317,14 @@ function updateAllData(a, b, c, d, e, f) {
     max: 55,
   });
 
-  // Alert for Ups1
+  // Alert for Temperature 2
  if (temperature2 >= 26 && temperature2 <= 31) {
     gaugeAlert("Temperature-2", "high");
   } else if (temperature2 >= 32 && temperature2 <= 55) {
     gaugeAlert("Temperature-2", "very high");
   }
 
-  // UPS2 Output Voltage (0-300V)
+  // Temperature 3 (0-55°C)
   const temperature3 = c;
   updateGauge("temperature3", temperature3, {
     green: [0, 25],
@@ -333,14 +333,14 @@ function updateAllData(a, b, c, d, e, f) {
     max: 55,
   });
 
-  // Alert for Ups2
+  // Alert for Temperature 3
  if (temperature3 >= 26 && temperature3 <= 31) {
     gaugeAlert("Temperature-3", "high");
   } else if (temperature3 >= 32 && temperature3 <= 55) {
     gaugeAlert("Temperature-3", "very high");
   }
 
-  // Battery Voltage (0-60V)
+  // Temperature 4 (0-55°C)
   const temperature4 = d;
   updateGauge("temperature4", temperature4, {
     green: [0, 25],
@@ -349,14 +349,14 @@ function updateAllData(a, b, c, d, e, f) {
     max: 55,
   });
 
-  // Alert for Battery Voltage
+  // Alert for Temperature 4
  if (temperature4 >= 26 && temperature4 <= 31) {
     gaugeAlert("Temperature-4", "high");
   } else if (temperature4 >= 32 && temperature4 <= 55) {
     gaugeAlert("Temperature-4", "very high");
   }
 
-  // Temperature (0-55°C)
+  // humidity1 (0-100%)
   const humidity1 = e;
   updateGauge("humidity1", humidity1, {
     green: [41, 80],
@@ -372,7 +372,7 @@ function updateAllData(a, b, c, d, e, f) {
     gaugeAlert("humidity 1", "high");
   }
 
-  // humidity1 (0-100%)
+  // humidity2 (0-100%)
   const humidity2 = f;
   updateGauge("humidity2", humidity2, {
     green: [41, 80],
@@ -381,7 +381,7 @@ function updateAllData(a, b, c, d, e, f) {
     max: 100,
   });
 
-  // Alert for humidity1
+  // Alert for humidity2
   if (humidity2 >= 0 && humidity2 <= 40) {
     gaugeAlert("humidity 2", "low");
   } else if (humidity2 >= 81 && humidity2 <= 100) {
