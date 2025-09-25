@@ -25,7 +25,7 @@ if (logoutBtn) {
 //Declare psu array and variable
 // let fan_arr = [10, 20, 30, 40, 20];
 // let fan_arr = [0, 0, 0, 0, 0];
-let fan_arr = [0, 10, 0, 20, 0];
+let fan_arr = [10, 0, 20, 0, 30];
 
 // Chart array and variable Declare
 let ammonia = [10, 7, 30];
@@ -134,7 +134,7 @@ function fanOffShowData(fan_Id, fanCardData,fan_icon) {
   let ul = document.getElementById("alert-list");
   let li = document.createElement("li");
   li.classList.add("alert-list-card");
-  li.textContent = `${fanCardData} Failed.`;
+  li.textContent = `${fanCardData} is Failed.`;
   ul.appendChild(li);
 }
 // Psu data end

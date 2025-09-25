@@ -1,5 +1,5 @@
 const validUsername = "admin";
-const validPassword = "1745#";
+const validPassword = "1234";
 const validClientUsername = "rakesh";
 const validClientPassword = "rakesh007#";
 
